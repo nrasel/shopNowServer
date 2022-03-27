@@ -10,5 +10,10 @@ router.post(
   Category.create
 );
 router.get("/categories/:page", Authorization.authorized, Category.categories);
+router.get(
+  "/fetch-category/:id",
+  Authorization.authorized,
+  Category.fetchCategory
+);
 
 module.exports = router;
